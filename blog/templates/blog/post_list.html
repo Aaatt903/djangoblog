@@ -11,18 +11,17 @@
         <h3>Autor: Stasiu</h3>
         <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
+
+    {% comment "Komentarz autora" %}
+    <p>Tutaj lista postów</p>
+    {% endcomment %}
+
+    {% for post in posts %}
     <div>
-        <p>To jest akapid</p>
-        <em>To jest wyrżniony tekst</em><br>
-        <strong>To jest pogrubiony tekst</strong><br>
-        <a href="https://platforma.strefakursow.pl/platforma/moje_kursy">LINK</a>
+        <p>opublikowany: {{post.publish_date}}</p>
+        <h2><a href="">{{post.title}}</a></h2>
+        <en>{{post.text|linebreaksbr }}</en>
     </div>
-    <div>
-        <ul>
-            <li>elementy listy</li>
-            <li>elementy listy</li>
-            <li>elementy listy</li>
-        </ul>
-    </div>
+    {% endfor %}
 </body>
 </html>
